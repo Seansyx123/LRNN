@@ -1,0 +1,45 @@
+# Generated rules will appear here
+
+# PROMISE dataset rule set
+# Rule format: IF <metric conditions> THEN <defect-proneness conclusion>
+# Metrics are consistent with PROMISE repository datasets (e.g., JM1, PC1, KC1).
+
+RULE_1:
+IF (LOC > 350) AND (Cyclomatic_Complexity > 10)
+THEN Module is defect-prone
+
+RULE_2:
+IF (Halstead_Volume > 7000) AND (Halstead_Effort > 250000)
+THEN Module is defect-prone
+
+RULE_3:
+IF (Coupling_Between_Objects > 8) AND (Response_For_Class > 40)
+THEN Module is defect-prone
+
+RULE_4:
+IF (Fan_In > 12) AND (Fan_Out > 12)
+THEN Module is defect-prone
+
+RULE_5:
+IF (Code_Churn > 120) AND (Number_of_Changes > 6)
+THEN Module is defect-prone
+
+RULE_6:
+IF (Comment_Ratio < 0.15) AND (LOC > 200)
+THEN Module is defect-prone
+
+RULE_7:
+IF (Depth_of_Inheritance > 3) AND (Coupling_Between_Objects > 6)
+THEN Module is defect-prone
+
+RULE_8:
+IF (LOC < 70) AND (Cyclomatic_Complexity < 3) AND (Previous_Defects = 0)
+THEN Module is not defect-prone
+
+RULE_9:
+IF (Halstead_Difficulty > 35) AND (Distinct_Operators > 90)
+THEN Module is defect-prone
+
+RULE_10:
+IF (Weighted_Methods_Per_Class > 15) AND (Response_For_Class > 35)
+THEN Module is defect-prone

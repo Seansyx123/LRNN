@@ -1,0 +1,45 @@
+# Generated rules will appear here
+
+# BugHunter rule set
+# Rule format: IF <conditions> THEN <defect-prone conclusion>
+# These rules capture common defect patterns observed in software defect datasets.
+
+RULE_1:
+IF (LOC > 500) AND (Cyclomatic_Complexity > 15)
+THEN Module is defect-prone
+
+RULE_2:
+IF (Number_of_Changes > 10) AND (Recent_Commits < 30_days)
+THEN Module is defect-prone
+
+RULE_3:
+IF (Fan_In > 20) AND (Fan_Out > 20)
+THEN Module is defect-prone
+
+RULE_4:
+IF (Code_Churn > 300) AND (Previous_Defects > 0)
+THEN Module is defect-prone
+
+RULE_5:
+IF (Comment_Ratio < 0.10) AND (LOC > 300)
+THEN Module is defect-prone
+
+RULE_6:
+IF (Coupling_Between_Objects > 10) AND (Depth_of_Inheritance > 4)
+THEN Module is defect-prone
+
+RULE_7:
+IF (Recent_Commits > 5) AND (Average_Change_Size > 50)
+THEN Module is defect-prone
+
+RULE_8:
+IF (Previous_Defects = 0) AND (LOC < 100) AND (Cyclomatic_Complexity < 5)
+THEN Module is not defect-prone
+
+RULE_9:
+IF (Test_Coverage < 50%) AND (Number_of_Changes > 8)
+THEN Module is defect-prone
+
+RULE_10:
+IF (Developer_Count > 5) AND (Ownership < 0.5)
+THEN Module is defect-prone

@@ -1,0 +1,45 @@
+# Generated rules will appear here
+
+# NASA dataset rule set
+# Rule format: IF <metric conditions> THEN <defect-proneness conclusion>
+# Metrics are consistent with NASA PROMISE datasets.
+
+RULE_1:
+IF (LOC > 400) AND (Cyclomatic_Complexity > 12)
+THEN Module is defect-prone
+
+RULE_2:
+IF (Halstead_Volume > 8000) AND (Halstead_Effort > 300000)
+THEN Module is defect-prone
+
+RULE_3:
+IF (Lines_of_Code_Added > 200) AND (Number_of_Changes > 8)
+THEN Module is defect-prone
+
+RULE_4:
+IF (Fan_In > 15) AND (Fan_Out > 15)
+THEN Module is defect-prone
+
+RULE_5:
+IF (Comment_Ratio < 0.12) AND (LOC > 250)
+THEN Module is defect-prone
+
+RULE_6:
+IF (Cyclomatic_Complexity > 10) AND (Max_Nesting_Depth > 4)
+THEN Module is defect-prone
+
+RULE_7:
+IF (Previous_Defects > 0) AND (Code_Churn > 150)
+THEN Module is defect-prone
+
+RULE_8:
+IF (LOC < 80) AND (Cyclomatic_Complexity < 4) AND (Previous_Defects = 0)
+THEN Module is not defect-prone
+
+RULE_9:
+IF (Halstead_Difficulty > 40) AND (Operator_Count > 100)
+THEN Module is defect-prone
+
+RULE_10:
+IF (Distinct_Operands > 50) AND (Halstead_Volume > 6000)
+THEN Module is defect-prone
